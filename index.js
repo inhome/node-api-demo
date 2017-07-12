@@ -12,4 +12,10 @@ function readPage(raw) {
   return page;
 }
 
-module.exports = { jsonResponse: jsonResponse, readPage: readPage };
+function route(method, path) {
+  if (method === "GET" && path === "/health") return jsonResponse(200, { ok: true });
+  if (path === "/health") return jsonResponse(405, { error: "method_not_allowed" });
+  return jsonResponse(404, { error: "not_found" });
+}
+
+module.exports = { jsonResponse: jsonResponse, readPage: readPage, route: route };

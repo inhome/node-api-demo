@@ -11,3 +11,7 @@ Return a response description without opening sockets. JSON serialization errors
 ## readPage
 
 Accept positive safe integers. Missing input defaults to page one; malformed input is an error.
+
+## route
+
+A minimal route experiment. The caller is responsible for parsing URLs, adapting headers, and writing the response.

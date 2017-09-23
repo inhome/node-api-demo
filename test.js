@@ -13,3 +13,6 @@ assert.strictEqual(lib.route("GET", "/health").status, 200);
 assert.strictEqual(lib.route("POST", "/health").status, 405);
 assert.strictEqual(lib.route("GET", "/missing").status, 404);
 
+assert.strictEqual(lib.pickFields({ title: "a", secret: "b" }, ["title"]).title, "a");
+assert.strictEqual(lib.pickFields({ title: "a", secret: "b" }, ["title"]).secret, undefined);
+

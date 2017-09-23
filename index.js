@@ -18,4 +18,12 @@ function route(method, path) {
   return jsonResponse(404, { error: "not_found" });
 }
 
-module.exports = { jsonResponse: jsonResponse, readPage: readPage, route: route };
+function pickFields(body, allowed) {
+  var result = Object.create(null);
+  allowed.forEach(function (key) {
+    if (Object.prototype.hasOwnProperty.call(body, key)) result[key] = body[key];
+  });
+  return result;
+}
+
+module.exports = { jsonResponse: jsonResponse, readPage: readPage, route: route, pickFields: pickFields };

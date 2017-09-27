@@ -15,3 +15,7 @@ Accept positive safe integers. Missing input defaults to page one; malformed inp
 ## route
 
 A minimal route experiment. The caller is responsible for parsing URLs, adapting headers, and writing the response.
+
+## pickFields
+
+Copy only explicitly allowed own properties. Field selection is separate from type validation.
